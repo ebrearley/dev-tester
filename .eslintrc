@@ -4,6 +4,7 @@
     "mocha": true,
   },
   "extends": "airbnb-base",
+  "parser": "babel-eslint",
   "rules": {
     "id-length": [2, {"min": 2, "properties": "never", "exceptions": ["_", "i", "j"]}],
     "indent": [2, 2, {"SwitchCase": 1}],
