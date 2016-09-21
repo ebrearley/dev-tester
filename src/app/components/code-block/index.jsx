@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {
+import { Grid, Row, Col,
+  Alert,
   FormGroup,
   FormControl,
   Button,
@@ -69,11 +70,17 @@ export default class CodeBlock extends Component {
     };
 
     let bsStyle = 'primary';
+    let joinInlightStyle = 'hide';
+    let haveWhatItTakesStyle = 'hide';
+    let alertStyle = 'hide';
 
     if (validationResponse.hasBeenValidatedOnce) {
       modal.title = validationResponse.success ? 'Yay you did it!' : 'Oh oooo!';
       modal.message = validationResponse.message;
-      bsStyle = validationResponse.success ? 'success' : 'danger';
+      bsStyle = validationResponse.success ? 'success' : 'warning';
+      joinInlightStyle = validationResponse.success ? 'success' : 'hide';
+      alertStyle = validationResponse.success ? 'hide' : 'warning';
+      haveWhatItTakesStyle = validationResponse.success ? 'success' : 'hide';
     }
 
     return (
@@ -114,9 +121,23 @@ export default class CodeBlock extends Component {
               </FormGroup>
             </form>
           </Panel>
-          <Button onClick={this.handleCodeCheck} bsStyle="primary">Check my code!</Button>
+          <Alert bsStyle={alertStyle}>
+            <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+          </Alert>
+          <Button block onClick={this.handleCodeCheck} bsStyle="primary">Check my code!</Button>
         </Panel>
-        <Button bsStyle="success" bsSize="large">Join Inlight!</Button>
+        <Grid>
+          <Row>
+            <Col sm={12} md={6}>
+              <Panel bsStyle={haveWhatItTakesStyle}>
+                <p>Looks like you have what it takes!</p>
+              </Panel>
+            </Col>
+            <Col sm={12} md={6}>
+              <Button block bsStyle={joinInlightStyle} bsSize="large">Join Inlight!</Button>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
