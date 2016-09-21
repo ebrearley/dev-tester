@@ -1,0 +1,11 @@
+*.log
+dist
+node_modules
+coverage
+Thumbs.db
+.DS_Store
+*.sublime-workspace
+*.todo
+*.swp
+*.swo
+*.swn
