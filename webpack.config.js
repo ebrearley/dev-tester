@@ -20,6 +20,9 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: path.join(__dirname, '/src/index.html'),
       to: path.join(distDir, 'index.html'),
+    }, {
+      from: path.join(__dirname, 'assets/'),
+      to: path.join(distDir, 'assets/'),
     }]),
   ],
   resolve: {
