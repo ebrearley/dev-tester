@@ -11,7 +11,7 @@ module.exports = {
     contentBase: './dist',
     hot: true,
   },
-  entry: './index.js',
+  entry: './index.jsx',
   output: {
     path: distDir,
     filename: 'bundle.js',
@@ -22,6 +22,10 @@ module.exports = {
       to: path.join(distDir, 'index.html'),
     }]),
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.styl'],
+    modulesDirectories: ['src', 'node_modules'],
+  },
   module: {
     loaders: [
       {
