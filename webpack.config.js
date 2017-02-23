@@ -23,6 +23,9 @@ module.exports = {
     }, {
       from: path.join(__dirname, 'assets/'),
       to: path.join(distDir, 'assets/'),
+    }, {
+      from: path.join(__dirname, '/src/styles.css'),
+      to: path.join(distDir, 'styles.css'),
     }]),
   ],
   resolve: {

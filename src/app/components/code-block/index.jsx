@@ -104,9 +104,9 @@ export default class CodeBlock extends Component {
           <Panel header="Program requirements">
             <ul>
               <li>Must export a Node.js module</li>
-              <li>Exported module must be an object with a function called concatinate.</li>
+              <li>Exported module must be an object with a function called concatenate.</li>
               <li>Function must have three parameters, first two are input strings, the third is a callback</li>
-              <li>The function must callback the first two parameters concatinated</li>
+              <li>The function must callback the first two parameters concatenated</li>
             </ul>
           </Panel>
           <Panel header="The code" bsStyle={bsStyle}>

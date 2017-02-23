@@ -1,8 +1,8 @@
 module.exports = `
 
 var getAwesomeGuy = function(prefix, suffix, callback) {
-  callback(prefix + suffix);
+  return prefix + suffix;
 }
 
-module.exports = { concatinate: getAwesomeGuy };
+module.exports = getAwesomeGuy(callback);
 `;

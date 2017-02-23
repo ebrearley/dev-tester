@@ -7,8 +7,8 @@ module.exports = (code, callback) => {
   try {
     const module = requireFromString(code);
 
-    const moduleCallback = (concatinatedString) => {
-      if (concatinatedString === 'Eric is awesome!') {
+    const moduleCallback = (concatenatedString) => {
+      if (concatenatedString === 'Eric is awesome!') {
         callback({
           success: true,
           message: `Wow you did it! ${prefix} ${suffix}`,
@@ -16,16 +16,11 @@ module.exports = (code, callback) => {
       }
     };
 
-    module.concatinate(prefix, suffix, moduleCallback);
+    module.concatenate(prefix, suffix, moduleCallback);
   } catch (exception) {
     callback({
       success: false,
       message: 'Nope not quite there, try again.',
-    });
-  } finally {
-    callback({
-      success: false,
-      message: 'Okay wut',
     });
   }
 };
